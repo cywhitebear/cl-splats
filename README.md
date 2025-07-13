@@ -76,9 +76,8 @@ path/to/your/input/
 
 
 ### Running CL-Splats
-First, make sure to override the paths to the data in the config files. Values that must be overriden are marked by <>.
+As of now, only the change detection is functional. This module can be used on its own but please wait for the rest of the framework to be added.
 
-Then you can run the model by invoking a script under scripts.
 > **Note:**  
 > Note that as of now, not the complete pipeline is released. Please refer to [Todos](#todos) to see the progress of releases.
 
@@ -88,6 +87,7 @@ My goal is to release the code in a shape that is a) easy to use and extend, b) 
 Until ICCV, I will release the missing modules to replicate our method. I plan to slightly upgrade these modules following improvements to e.g. 3DGS done in the meantime.
 
 - [x] Release initial codebase with framework skeleton.
+- [x] Release camera estimation script.
 - [x] Release fast change detection module.
 - [] Release sampling module.
 - [] Release pruning module.
