@@ -44,9 +44,32 @@ We tested our code on Ubuntu 24.04 with CUDA 12.8. It is easiest to install the 
 ### Computing Poses
 In our work, we describe two different ways to obtain poses, which both use COLMAP. In this repository we will focus on the second incremental way. While it may lead to slightly worse reconstruction performance, it scales better with more timesteps and it is possible to build it incrementally. We also see it as a chance to promote further research improving issues with existing pose-estimation methods for incremental updates under changes.
 
-For your convenience, we provide a python script that given data automatically obtains the poses.
+For your convenience, we provide a python script `clsplats/utils/preprocessing.py` that given data automatically obtains the poses. The functionality of this script is explained in the supplementary material of our paper.
+To run the preprocessing script and compute poses, use:
+```bash
+python3 clsplats/utils/preprocessing.py --input_dir <path/to/your/input>
+```
 
-The functionality of this script is explained in the supplementary material of our paper.
+The script assumes the following directory structure:
+```text
+path/to/your/input/
+├── t0/
+│   ├── *.{png,jpeg,jpg}
+│   ├── *.{png,jpeg,jpg}
+│   └── ...
+├── t1/
+│   ├── *.{png,jpeg,jpg}
+│   ├── *.{png,jpeg,jpg}
+│   └── ...
+├── t2/
+│   ├── *.{png,jpeg,jpg}
+│   ├── *.{png,jpeg,jpg}
+│   └── ...
+└── ...
+```
+
+
+
 
 > **Note:**  
 > While you can obtain the poses yourself, our codebase currently only supports NeRF-Synthetic and COLMAP poses. Additionally, their naming scheme must be consistent with the one produced by our script! 
