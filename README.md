@@ -89,11 +89,11 @@ Until ICCV, I will release the missing modules to replicate our method. I plan t
 - [x] Release initial codebase with framework skeleton.
 - [x] Release camera estimation script.
 - [x] Release fast change detection module.
-- [] Release sampling module.
-- [] Release pruning module.
-- [] Release local-optimization CUDA kernels.
-- [] Release data.
-- [] Release history recovery.
+- [ ] Release sampling module.
+- [ ] Release pruning module.
+- [ ] Release local-optimization CUDA kernels.
+- [ ] Release data.
+- [ ] Release history recovery.
 
 ## Citation
 ```
