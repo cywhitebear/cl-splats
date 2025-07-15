@@ -61,8 +61,7 @@ Then you can run the model by invoking a script under scripts.
 
 
 ## Todos
-My goal is to release the code in a shape that is a) easy to use and extend, b) easy to understand, and c) useful.
-Until ICCV, I will release the missing modules to replicate our method. I plan to slightly upgrade these modules following improvements to e.g. 3DGS done in the meantime.
+Until ICCV, the missing modules required to replicate our method will be released. These modules are planned to be slightly upgraded to incorporate improvements made in the meantime, such as those to 3DGS.
 
 - [x] Release initial codebase with framework skeleton.
 - [x] Release fast change detection module.
