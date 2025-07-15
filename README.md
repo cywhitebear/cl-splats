@@ -44,18 +44,40 @@ We tested our code on Ubuntu 24.04 with CUDA 12.8. It is easiest to install the 
 ### Computing Poses
 In our work, we describe two different ways to obtain poses, which both use COLMAP. In this repository we will focus on the second incremental way. While it may lead to slightly worse reconstruction performance, it scales better with more timesteps and it is possible to build it incrementally. We also see it as a chance to promote further research improving issues with existing pose-estimation methods for incremental updates under changes.
 
-For your convenience, we provide a python script that given data automatically obtains the poses.
+For your convenience, we provide a python script `clsplats/utils/preprocessing.py` that given data automatically obtains the poses. The functionality of this script is explained in the supplementary material of our paper.
+To run the preprocessing script and compute poses, use:
+```bash
+python3 clsplats/utils/preprocessing.py --input_dir <path/to/your/input>
+```
 
-The functionality of this script is explained in the supplementary material of our paper.
+The script assumes the following directory structure:
+```text
+path/to/your/input/
+├── t0/
+│   ├── *.{png,jpeg,jpg}
+│   ├── *.{png,jpeg,jpg}
+│   └── ...
+├── t1/
+│   ├── *.{png,jpeg,jpg}
+│   ├── *.{png,jpeg,jpg}
+│   └── ...
+├── t2/
+│   ├── *.{png,jpeg,jpg}
+│   ├── *.{png,jpeg,jpg}
+│   └── ...
+└── ...
+```
+
+
+
 
 > **Note:**  
 > While you can obtain the poses yourself, our codebase currently only supports NeRF-Synthetic and COLMAP poses. Additionally, their naming scheme must be consistent with the one produced by our script! 
 
 
 ### Running CL-Splats
-First, make sure to override the paths to the data in the config files. Values that must be overriden are marked by <>.
+As of now, only the change detection is functional. This module can be used on its own but please wait for the rest of the framework to be added.
 
-Then you can run the model by invoking a script under scripts.
 > **Note:**  
 > Note that as of now, not the complete pipeline is released. Please refer to [Todos](#todos) to see the progress of releases.
 
@@ -64,12 +86,13 @@ Then you can run the model by invoking a script under scripts.
 Until ICCV, the missing modules required to replicate our method will be released. These modules are planned to be slightly upgraded to incorporate improvements made in the meantime, such as those to 3DGS.
 
 - [x] Release initial codebase with framework skeleton.
+- [x] Release camera estimation script.
 - [x] Release fast change detection module.
-- [] Release sampling module.
-- [] Release pruning module.
-- [] Release local-optimization CUDA kernels.
-- [] Release data.
-- [] Release history recovery.
+- [ ] Release sampling module.
+- [ ] Release pruning module.
+- [ ] Release local-optimization CUDA kernels.
+- [ ] Release data.
+- [ ] Release history recovery.
 
 ## Citation
 ```

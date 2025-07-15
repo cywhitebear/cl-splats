@@ -3,7 +3,7 @@ import abc
 import omegaconf
 import torch
 
-from clsplats.utils.types import Image
+from clsplats.utils.custom_types import Image
 
 class BaseDetector(abc.ABC):
 
